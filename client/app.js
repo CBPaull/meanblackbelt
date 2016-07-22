@@ -11,8 +11,21 @@ var myApp = angular.module('Myapp', ['ngRoute']);
 		$routeProvider
 			.when('/', 
 			{
-				controller: 'indexController',
+				controller: 'newController',
+				templateUrl: "partials/new.html"
+			})
+			.when('/poll/new/:id', {
+				controller: "editController", 
+				templateUrl: "partials/edit.html"
+			})
+			.when('/poll/index/:id', {
+				controller: "indexController",
 				templateUrl: "partials/index.html"
 			})
+			.when('/poll//:id1/:id2', 
+			{
+				controller: 'showController', 
+				templateUrl: "partials/show.html"
+			})			
 	})
 }());

@@ -1,1 +1,10 @@
-<h1>This is my index partial</h1>
+
+<h1>These are the current Polls:</h1>
+<h2> hello, {{user.firstname}}</h2>
+<div ng-repeat = "poll in polls">
+	<p>{{poll.username}}
+	<p><a href = "#/poll//{{user._id}}/{{poll._id}}">{{poll.question}}</a></p>
+	<h3>{{poll.createdAt}}</h3>
+	<button type="button" ng-if="poll._username === user.firstname" ng-click = "deletePoll(poll)">Delete this Question</button>
+	</div>
+<h2> <a href="#/poll/new/{{user._id}}"> Make a new Poll</a></h2>
